@@ -180,7 +180,7 @@
       <div class="primary-features">
         <div class="primary-feature panel reveal">
           <span class="primary-feature-label">Tracking&nbsp;//&nbsp;01</span>
-          <p class="primary-feature-desc">Full 6DOF at 60fps, via TrueDepth on iPhone and camera-based face tracking on Android, Accela-filtered on-device. Smooth before it ever leaves your phone. The head tracking mods take the feed directly; for games with native tracking support, route it through OpenTrack for filtering, custom curves, and other protocols. Per-axis sensitivity from 0.1x to 5.0x.</p>
+          <p class="primary-feature-desc">Full 6DOF at 60fps, via TrueDepth on iPhone and a neural net we built ourselves on Android, Accela-filtered on-device. The Android net was written for speed: in our testing it clocked in less than 50ms behind hardwired dedicated tracking hardware, over the air, and it left other Android trackers in the dust. Smooth before it ever leaves your phone. The head tracking mods take the feed directly; for games with native tracking support, route it through OpenTrack for filtering, custom curves, and other protocols. Per-axis sensitivity from 0.1x to 5.0x.</p>
         </div>
         <div class="primary-feature panel reveal">
           <span class="primary-feature-label">Streaming&nbsp;//&nbsp;02</span>
@@ -224,7 +224,7 @@
           <p class="download-card-desc">The app. Head tracking, camera, audio: everything runs here. Out now on the App Store.</p>
           <div class="download-card-bottom">
             <a href="https://apps.apple.com/us/app/headcam/id6759300260" class="btn btn-primary">Download on the App Store</a>
-            <span class="download-req">iPhone with Face ID &middot; iOS 18+</span>
+            <span class="download-req">iPhone with Face ID &middot; iOS 18 or later</span>
           </div>
         </div>
 
@@ -233,7 +233,7 @@
             <img src="assets/images/app-icon.png" alt="Headcam" class="download-app-icon" width="48" height="48">
             <h3>Headcam for Android <span class="badge">Closed beta</span></h3>
           </div>
-          <p class="download-card-desc">The same app for Android, in closed testing before its Play Store launch. Join the testers group with your Google account to get immediate access.</p>
+          <p class="download-card-desc">The same app for Android, running our own head tracking neural net, in closed testing before its Play Store launch. Join the testers group with your Google account to get immediate access.</p>
           <div class="download-card-bottom">
             <a href="https://groups.google.com/g/headcam-testers" class="btn btn-primary">Join the Testers Group</a>
             <span class="download-req">Closed testing via Google Play</span>
@@ -357,7 +357,7 @@ chmod +x headcam-usb/headcam-usb
         <div class="compat-group reveal">
           <h3>Requirements</h3>
           <ul>
-            <li>iPhone with Face ID, iOS 18+</li>
+            <li>iPhone with Face ID, iOS 18 or later</li>
             <li>or an Android phone (closed beta)</li>
             <li>WiFi or USB cable</li>
           </ul>
