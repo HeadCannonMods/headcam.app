@@ -4,44 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - Headcam</title>
-  <meta name="description" content="Headcam runs entirely on your devices. We don't collect, transmit, or store any personal data.">
-  <meta name="theme-color" content="#07080c">
+  <meta name="description" content="Headcam collects nothing. Tracking, video and audio stay on your phone and your own network.">
+  <meta name="theme-color" content="#1f4d3a">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="fonts/baloo2-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">
-        <img src="assets/images/app-icon.png" alt="Headcam" class="nav-icon" width="32" height="32">
-        <span class="nav-wordmark">Headcam</span>
-      </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-      <div class="nav-links" id="nav-links">
-        <a href="index.html#features">Features</a>
-        <a href="index.html#downloads">Downloads</a>
-        <a href="index.html#setup">Get started</a>
-        <a href="index.html#downloads" class="nav-cta">Get the app</a>
-      </div>
-    </div>
-  </nav>
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <main class="legal">
-    <div class="container">
-      <span class="section-label">Privacy</span>
-      <h1 class="legal-headline">Privacy Policy</h1>
-      <p class="legal-updated">Last updated: July 26, 2026</p>
+<header class="strip">
+  <div class="strip-row">
+    <a href="index.html" class="brand"><img src="assets/images/app-icon.png" alt="" width="26" height="26">Headcam</a>
+    <nav aria-label="Primary">
+      <a href="index.html#does">What it does</a>
+      <a href="index.html#setup">Setup</a>
+      <a href="index.html#set" class="collect">Get the app</a>
+    </nav>
+  </div>
+</header>
 
-      <p>Headcam is built so that your face, your voice, and your motion never leave your hands. The short version: we don't collect anything.</p>
+<main id="main" class="legal-page">
+  <div class="wrap">
+    <article class="legal-card">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: September 3, 2026</p>
+
+      <p class="intro">Headcam is built so that your face, your voice, and your motion never leave your hands. The short version: we don't collect anything.</p>
 
       <h2>What we collect</h2>
       <p>Nothing. Headcam has no servers, no accounts, no analytics, no telemetry, no crash reporting, no advertising IDs, and no third-party SDKs that phone home. The app does not send any data to us or to anyone else.</p>
@@ -50,7 +44,7 @@
       <p>Everything runs locally:</p>
       <ul>
         <li>The app uses your phone's front camera (the TrueDepth camera on iPhone) and microphone on-device to produce head tracking data, video, and audio.</li>
-        <li>That data is sent over your own local network (WiFi) or a direct USB cable to your own PC running OBS or a game.</li>
+        <li>That data is sent over your own local network (WiFi) or, on iPhone, a direct USB cable to your own PC running OBS or a game.</li>
         <li>The QuickFeed OBS plugin and the USB Companion app receive that stream on your PC. They do not upload it anywhere.</li>
       </ul>
       <p>If you choose to stream or record using OBS, where that output goes (a local file, Twitch, YouTube, etc.) is entirely up to you and governed by the privacy policy of whichever service you use.</p>
@@ -58,9 +52,9 @@
       <h2>Face data</h2>
       <p>Headcam uses your phone's front camera (on iPhone, the TrueDepth camera through Apple's ARKit) to follow the position and orientation of your head and to separate you from your background for the green screen and blur effects. Here is exactly what happens to that face data:</p>
       <ul>
-        <li>Collection and use: face data is processed on your device, in real time, only while a session is running. It is used for head tracking and the camera effects, and for nothing else. Headcam never identifies you, never reads facial expressions, and never uses face data for anything beyond the features you can see.</li>
-        <li>Sharing and disclosure: face data is never shared with us or with any third party. The only things derived from your face that leave the phone are six head-pose numbers (position and rotation) and your own video stream, and both go exclusively to the computer you point the app at.</li>
-        <li>Retention, storage, and deletion: face data is never written to storage. It exists only in memory during the live session and is gone the moment the session ends. Nothing is retained, by us or by the app, so there is nothing to delete.</li>
+        <li><b>Collection and use:</b> face data is processed on your device, in real time, only while a session is running. It is used for head tracking and the camera effects, and for nothing else. Headcam never identifies you, never reads facial expressions, and never uses face data for anything beyond the features you can see.</li>
+        <li><b>Sharing and disclosure:</b> face data is never shared with us or with any third party. The only things derived from your face that leave the phone are six head-pose numbers (position and rotation) and, if you turn streaming on, your own video stream, and both go exclusively to the computer you point the app at.</li>
+        <li><b>Retention, storage, and deletion:</b> face data is never written to storage. It exists only in memory during the live session and is gone the moment the session ends. Nothing is retained, by us or by the app, so there is nothing to delete.</li>
       </ul>
 
       <h2>Permissions the app requests</h2>
@@ -73,35 +67,33 @@
       <p>Headcam is not directed at children. Because we don't collect any data, we have nothing to collect from anyone of any age.</p>
 
       <h2>Third parties</h2>
-      <p>The iOS app is distributed through Apple's App Store and the Android app through Google Play; Apple's and Google's own privacy policies apply to your use of those stores. The site itself is hosted on GitHub Pages and uses Google Fonts to load typefaces; loading a font issues a request to Google's CDN. We do not run analytics, tag managers, or trackers on this site.</p>
+      <p>The iOS app is distributed through Apple's App Store and the Android app through Google Play; Apple's and Google's own privacy policies apply to your use of those stores. The site itself is hosted on GitHub Pages and serves its own fonts, so it makes no third-party requests. We do not run analytics, tag managers, or trackers on this site.</p>
 
       <h2>Changes</h2>
       <p>If this ever changes (for example, if a future version of the app adds an optional cloud feature), we'll update this page and clearly call it out in the app. Anything optional will stay optional.</p>
 
       <h2>Contact</h2>
       <p>Questions? Reach out on Bluesky: <a href="https://bsky.app/profile/itsloopyo.bsky.social" target="_blank" rel="noopener noreferrer">@itsloopyo</a>.</p>
-    </div>
-  </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="assets/images/app-icon.png" alt="" class="footer-icon" width="24" height="24">
-        <span>Headcam</span>
-      </div>
-      <div class="footer-links">
-        <a href="privacy.html" class="footer-link">Privacy</a>
-        <a href="terms.html" class="footer-link">Terms</a>
-        <a href="https://github.com/itsloopyo" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
-        <a href="https://discord.com/invite/dxyZdyFNT9" target="_blank" rel="noopener noreferrer" class="footer-link">Discord</a>
-        <a href="https://bsky.app/profile/itsloopyo.bsky.social" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Bluesky">@itsloopyo</a>
-      </div>
-    </div>
-    <div class="container">
-      <p class="footer-note">Game titles belong to their respective owners. Headcam and the head tracking mods are independent projects, not affiliated with or endorsed by any game developer or publisher.</p>
-    </div>
-  </footer>
+      <a class="back-link" href="index.html">Back to Headcam</a>
+    </article>
+  </div>
+</main>
 
-  <script src="js/main.js"></script>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-row">
+      <b>Headcam</b>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="https://github.com/itsloopyo" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://discord.com/invite/dxyZdyFNT9" target="_blank" rel="noopener noreferrer">Discord</a>
+      <a href="https://bsky.app/profile/itsloopyo.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky &middot; @itsloopyo</a>
+      <a href="https://lopari.app" target="_blank" rel="noopener noreferrer">Lopari</a>
+    </div>
+    <p class="legal">Game titles belong to their respective owners. Headcam and the head tracking mods are independent projects, not affiliated with or endorsed by any game developer or publisher.</p>
+  </div>
+</footer>
+
 </body>
 </html>

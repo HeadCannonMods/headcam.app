@@ -6,3 +6,8 @@ Thumbs.db
 AGENTS.md
 CLAUDE.md
 .lab/
+
+# Impeccable design context - local only, never tracked
+PRODUCT.md
+DESIGN.md
+.impeccable/

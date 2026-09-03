@@ -4,27 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Headcam - iPhone &amp; Android head tracking for games and streaming</title>
-  <meta name="description" content="Move your head, the game follows. Headcam turns your phone into a 6DOF head tracker for games and an ultra low latency camera for OBS. Free on the App Store, Android beta open.">
-  <meta name="theme-color" content="#07080c">
+  <meta name="description" content="Move your head, the game follows. Headcam turns your iPhone or Android into a head tracker for games, with fast streaming to OBS on the side. Free on the App Store, Android in closed testing.">
+  <meta name="theme-color" content="#1f4d3a">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Headcam">
   <meta property="og:url" content="https://headcam.app/">
   <meta property="og:title" content="Headcam - iPhone &amp; Android head tracking for games and streaming">
-  <meta property="og:description" content="Move your head, the game follows. Headcam turns your phone into a 6DOF head tracker for games and an ultra low latency camera for OBS. Free on the App Store, Android beta open.">
+  <meta property="og:description" content="Move your head, the game follows. Headcam turns your iPhone or Android into a head tracker for games, with fast streaming to OBS on the side. Free on the App Store, Android in closed testing.">
   <meta property="og:image" content="https://headcam.app/assets/images/app-icon.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Headcam - iPhone &amp; Android head tracking for games and streaming">
-  <meta name="twitter:description" content="Move your head, the game follows. Headcam turns your phone into a 6DOF head tracker for games and an ultra low latency camera for OBS. Free on the App Store, Android beta open.">
+  <meta name="twitter:description" content="Move your head, the game follows. Headcam turns your iPhone or Android into a head tracker for games, with fast streaming to OBS on the side. Free on the App Store, Android in closed testing.">
   <meta name="twitter:image" content="https://headcam.app/assets/images/app-icon.png">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2">
-  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preload" href="fonts/baloo2-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -32,7 +30,7 @@
     "name": "Headcam",
     "operatingSystem": "iOS, Android",
     "applicationCategory": "UtilitiesApplication",
-    "description": "Headcam turns your phone into a 6DOF head tracker for games and an ultra low latency camera for OBS.",
+    "description": "Headcam turns your phone into a head tracker for games, with fast streaming to OBS.",
     "url": "https://headcam.app/",
     "installUrl": "https://apps.apple.com/us/app/headcam/id6759300260",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -41,370 +39,194 @@
 </head>
 <body>
 
-  <!-- Nav -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-brand">
-        <img src="assets/images/app-icon.png" alt="Headcam" class="nav-icon" width="32" height="32">
-        <span class="nav-wordmark">Headcam</span>
-      </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-      <div class="nav-links" id="nav-links">
-        <a href="#features">Features</a>
-        <a href="#downloads">Downloads</a>
-        <a href="#setup">Get started</a>
-        <a href="#downloads" class="nav-cta">Get the app</a>
-      </div>
-    </div>
-  </nav>
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Hero -->
-  <header class="hero" id="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <div class="hud-chips" aria-hidden="true">
-          <span class="chip chip--live"><i class="chip-dot"></i>Track&nbsp;lock</span>
-          <span class="chip chip--mono">YAW <b>+12.4</b>°</span>
-          <span class="chip chip--mono">PITCH <b>&minus;03.8</b>°</span>
-          <span class="chip chip--mono">ROLL <b>+01.6</b>°</span>
-        </div>
-        <h1 class="hero-headline">
-          <span class="hl-line">Move your head.</span>
-          <span class="hl-line hl-line--accent">The game follows.</span>
-        </h1>
-      </div>
-      <div class="hero-visual" id="hero-visual" aria-hidden="true">
-        <video class="hero-app-shot" src="img/hero-compare.mp4" poster="img/hero-compare-poster.jpg" width="1280" height="720" autoplay muted loop playsinline></video>
-      </div>
-      <div class="hero-copy">
-        <p class="hero-sub">Your phone tracks your face 60 times a second. Headcam turns that into 6DOF head tracking for your games and an ultra low latency camera for OBS.</p>
-        <p class="hero-pitch"><s>TrackIR</s><s>Head clip</s><s>Webcam</s><em>Just your phone.</em></p>
-        <div class="hero-actions">
-          <a href="https://apps.apple.com/us/app/headcam/id6759300260" class="btn btn-primary">Download for iOS</a>
-          <a href="https://groups.google.com/g/headcam-testers" class="btn btn-ghost">Join Android Beta <span class="arrow">&rarr;</span></a>
-        </div>
-        <p class="hero-meta">Free on the App Store &middot; Android in closed beta</p>
-      </div>
-    </div>
-  </header>
-
-  <!-- Games marquee -->
-  <div class="marquee" aria-label="Works with DCS World, Skyrim, Microsoft Flight Simulator, Cyberpunk 2077, Subnautica, iRacing, Outer Wilds, Star Citizen, Resident Evil Village, Euro Truck Simulator 2, Valheim, Firewatch, Dying Light 2, Return of the Obra Dinn, games with native tracking support via OpenTrack, and 30+ games via mods">
-    <div class="marquee-track" aria-hidden="true">
-      <ul class="marquee-list">
-        <li>DCS World</li><li>Skyrim</li><li>MS Flight Simulator</li><li>Cyberpunk 2077</li><li>Subnautica</li><li>iRacing</li><li>Outer Wilds</li><li>Star Citizen</li><li>Resident Evil Village</li><li>Euro Truck Simulator 2</li><li>Valheim</li><li>Firewatch</li><li>Dying Light 2</li><li>Obra Dinn</li><li class="mq-accent">+ new mods regularly</li>
-      </ul>
-      <ul class="marquee-list">
-        <li>DCS World</li><li>Skyrim</li><li>MS Flight Simulator</li><li>Cyberpunk 2077</li><li>Subnautica</li><li>iRacing</li><li>Outer Wilds</li><li>Star Citizen</li><li>Resident Evil Village</li><li>Euro Truck Simulator 2</li><li>Valheim</li><li>Firewatch</li><li>Dying Light 2</li><li>Obra Dinn</li><li class="mq-accent">+ new mods regularly</li>
-      </ul>
-    </div>
+<header class="strip">
+  <div class="strip-row">
+    <a href="#" class="brand"><img src="assets/images/app-icon.png" alt="" width="26" height="26">Headcam</a>
+    <nav aria-label="Primary">
+      <a href="#does">What it does</a>
+      <a href="#setup">Setup</a>
+      <a href="#set" class="collect">Get the app</a>
+    </nav>
   </div>
+</header>
 
-  <!-- Use Cases -->
-  <section class="usecases">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="sec-index">01</span>
-        <span class="sec-label">Built for</span>
-        <span class="sec-line"></span>
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="pcard main">
+        <span class="rule" aria-hidden="true"></span>
+        <div class="pin"><img src="assets/images/app-icon.png" alt="Headcam app icon" width="150" height="150"></div>
+        <h1>Move your head. The game follows.</h1>
+        <p class="lead">Your phone watches your face and the game does exactly what your head does. Lean to see round a corner, glance at a mirror, peek over the dash. Nothing to buy, nothing to wear.</p>
+        <div class="btns">
+          <a class="btn" href="https://apps.apple.com/us/app/headcam/id6759300260">Get it on iOS</a>
+          <a class="btn alt" href="https://groups.google.com/g/headcam-testers">Android beta</a>
+        </div>
+        <p class="fine">Free on the App Store &middot; Android in closed testing</p>
+        <div class="specs">
+          <div><b>6</b><span>ways to move</span></div>
+          <div><b>120</b><span>updates a second</span></div>
+          <div><b>0</b><span>things to buy</span></div>
+        </div>
       </div>
-      <h2 class="sec-display reveal">Every <em>game.</em></h2>
-      <div class="usecases-grid">
-        <div class="usecase panel reveal">
-          <span class="panel-mode">MODE//SIM</span>
-          <svg class="usecase-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="24" cy="24" r="16"/>
-            <circle cx="24" cy="24" r="4"/>
-            <path d="M24 8v12M11 32l9.5-5.5M37 32l-9.5-5.5"/>
-          </svg>
-          <h3>Sims &amp; cockpits</h3>
-          <p>Check your six in DCS. Look into the apex in iRacing. Scan instruments in MSFS, mirrors in ETS2. Your phone feeds OpenTrack, OpenTrack feeds the sim.</p>
+
+      <div>
+        <figure class="pcard wild">
+          <span class="rule" aria-hidden="true"></span>
+          <video class="demo" src="img/hero-compare.mp4" poster="img/hero-compare-poster.jpg" width="1280" height="720" autoplay muted loop playsinline preload="metadata"></video>
+          <figcaption>iPhone and Android tracking, side by side.</figcaption>
+        </figure>
+        <div class="wild-copy">
+          <h2>Your phone is the tracker.</h2>
+          <p>The front camera watches your face and Headcam turns that into head tracking for DCS, iRacing, MSFS, the hundreds of games OpenTrack supports, and dozens more through free mods. It even streams to OBS on the side, if you want it.</p>
         </div>
-        <div class="usecase panel reveal">
-          <span class="panel-mode">MODE//WRLD</span>
-          <svg class="usecase-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 36l12-18 8 12 6-8 10 14H6z"/>
-            <circle cx="33" cy="13" r="4"/>
-          </svg>
-          <h3>Open worlds &amp; adventures</h3>
-          <p>Subnautica's depths, Outer Wilds' skies, Skyrim at eye level. Single-player worlds feel different when you can actually look around in them. Free, open-source community mods make it happen.</p>
-        </div>
-        <div class="usecase panel reveal">
-          <span class="panel-mode">MODE//LIVE</span>
-          <svg class="usecase-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="10" y="16" width="22" height="16" rx="2"/>
-            <path d="M32 22l8-5v14l-8-5"/>
-            <path d="M6 10c2.5 2.5 2.5 5.5 0 8M42 38c-2.5-2.5-2.5-5.5 0-8"/>
-          </svg>
-          <h3>Streaming</h3>
-          <p>A face cam that moves with you: lean in, look around, react. Plus greenscreen, audio, and lighting built in. One app replaces a webcam and a pile of OBS filters.</p>
-        </div>
-        <div class="usecase usecase--wide panel reveal">
-          <span class="panel-mode">MODE//ALL</span>
-          <div class="usecase-wide-grid">
-            <div>
-              <h3 class="usecase-wide-title">&hellip;and everything <em>else.</em></h3>
-              <p>Games without native tracking support can get it through free, open-source community mods, shared on GitHub and Nexus Mods, easy to install and just as easy to remove. 30+ games and counting, with new releases regularly. <a href="https://lopari.app" target="_blank" rel="noopener noreferrer">Lopari</a> launches any of them with tracking enabled in one click.</p>
-            </div>
-            <div class="usecase-wide-actions">
-              <a href="https://github.com/itsloopyo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">Browse the mods <span class="arrow">&rarr;</span></a>
-              <a href="https://lopari.app" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">lopari.app <span class="arrow">&rarr;</span></a>
-              <a href="https://discord.com/invite/dxyZdyFNT9" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">Suggest a game <span class="arrow">&rarr;</span></a>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="does">
+    <div class="wrap">
+      <div class="backcard">
+        <h2>What it does</h2>
+        <div class="back-grid">
+          <div class="bl">
+            <i aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="#f3e9d2" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><path d="M7 2v10M2 7h10"/></svg></i>
+            <div><h3>Turn, tilt and lean, all six</h3><p>Your head moves six ways and the game gets all of them. On iPhone that comes from the <b>Face ID camera</b>; on Android from a <b>tracking model we built ourselves</b>. Smoothed on the phone and sent at <b>120 updates a second</b>.</p></div>
+          </div>
+          <div class="bl">
+            <i aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="#f3e9d2" stroke-width="1.6"><rect x="2" y="4" width="7" height="6" rx="1"/><path d="M9 6l3-2v6l-3-2"/></svg></i>
+            <div><h3>Streams to OBS, fast</h3><p>Video and noise-cancelled audio go straight into OBS through <b>QuickFeed</b>, our own plugin. A green screen effect without the green screen, background blur and face lighting come with the optional Pro upgrade.</p></div>
+          </div>
+          <div class="bl">
+            <i aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="#f3e9d2" stroke-width="1.6"><path d="M2 10l3-4 2 3 2-2 3 3"/></svg></i>
+            <div><h3>Is it as fast as a real tracker?</h3><p>Close. In our own testing both versions came in <b>about 30ms behind a dedicated tracker</b>. On Android, where trackers vary a lot, ours left the competition in the dust.</p></div>
+          </div>
+          <div class="bl">
+            <i aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="#f3e9d2" stroke-width="1.6"><path d="M2 4h10M2 7h10M2 10h10"/><circle cx="5" cy="4" r="1.3" fill="#f3e9d2"/><circle cx="9" cy="7" r="1.3" fill="#f3e9d2"/><circle cx="6" cy="10" r="1.3" fill="#f3e9d2"/></svg></i>
+            <div><h3>Won't I be looking away from the screen?</h3><p>Not for the movements that matter. Headcam maps your head to the camera <b>1:1</b> by default, so it is the small moves you make anyway, a lean, a glance, a peek, and the game does the same. Want more? Turn up the sensitivity on any axis, or route it through OpenTrack for curves.</p></div>
+          </div>
+          <div class="bl">
+            <i aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="#f3e9d2" stroke-width="1.6"><path d="M7 2l5 3v4l-5 3-5-3V5z"/></svg></i>
+            <div><h3>Games that never had it</h3><p>Free mods on <a href="https://github.com/itsloopyo" target="_blank" rel="noopener noreferrer">GitHub</a> and Nexus add head tracking to <b>dozens of games</b>, with more on the way. Easy in, easy out. <a href="https://lopari.app" target="_blank" rel="noopener noreferrer">Lopari</a> launches any of them in one click.</p></div>
+          </div>
+          <div class="bl">
+            <i aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="#f3e9d2" stroke-width="1.6"><rect x="3" y="6" width="8" height="6" rx="1"/><path d="M5 6V4a2 2 0 0 1 4 0v2"/></svg></i>
+            <div><h3>Nothing leaves your network</h3><p>No servers, no accounts, no analytics, no ads. Your face stays on the phone. The only things sent to your PC are six numbers describing where your head is, and your video if you choose to stream.</p></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="features" id="features">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="sec-index">02</span>
-        <span class="sec-label">Capability</span>
-        <span class="sec-line"></span>
-      </div>
-      <h2 class="sec-display reveal">What it <em>does.</em></h2>
+  <section class="sec" id="set">
+    <div class="wrap">
+      <h2>Downloads</h2>
+      <p class="sub">The app, and two small extras if you want them.</p>
+      <div class="set-grid">
 
-      <div class="stat-band reveal">
-        <div class="stat"><span class="stat-num">6</span><span class="stat-label">Degrees of freedom</span></div>
-        <div class="stat"><span class="stat-num">60</span><span class="stat-label">FPS tracking</span></div>
-        <div class="stat"><span class="stat-num">1080<i>p60</i></span><span class="stat-label">Video to OBS</span></div>
-        <div class="stat"><span class="stat-num">0</span><span class="stat-label">Extra hardware</span></div>
-      </div>
+        <div class="mini coral">
+          <div class="badge"><img src="assets/images/app-icon.png" alt="" width="64" height="64"></div>
+          <h3>Headcam for iOS</h3>
+          <span class="ver">Out now</span>
+          <p class="desc">The app. iPhone with Face ID, iOS 18 or later.</p>
+          <div class="go"><a href="https://apps.apple.com/us/app/headcam/id6759300260">App Store</a></div>
+        </div>
 
-      <div class="primary-features">
-        <div class="primary-feature panel reveal">
-          <span class="primary-feature-label">Tracking&nbsp;//&nbsp;01</span>
-          <p class="primary-feature-desc">Full 6DOF at 60fps, via TrueDepth on iPhone and a neural net we built ourselves on Android, Accela-filtered on-device. The Android net was written for speed: in our testing it clocked in less than 50ms behind hardwired dedicated tracking hardware, over the air, and it left other Android trackers in the dust. Smooth before it ever leaves your phone. The head tracking mods take the feed directly; for games with native tracking support, route it through OpenTrack for filtering, custom curves, and other protocols. Per-axis sensitivity from 0.1x to 5.0x.</p>
+        <div class="mini coral">
+          <div class="badge"><img src="assets/images/app-icon.png" alt="" width="64" height="64"></div>
+          <h3>Headcam for Android</h3>
+          <span class="ver">Closed beta</span>
+          <p class="desc">The same app for Android, in closed testing before it reaches the Play Store. Join the testers group with your Google account.</p>
+          <div class="go"><a href="https://groups.google.com/g/headcam-testers">Testers group</a></div>
         </div>
-        <div class="primary-feature panel reveal">
-          <span class="primary-feature-label">Streaming&nbsp;//&nbsp;02</span>
-          <p class="primary-feature-desc">1080p60 video and noise-cancelled audio straight into OBS via QuickFeed, our ultra low latency transport. Chroma key, background blur, and face lighting built in. One app, one source.</p>
-        </div>
-      </div>
 
-      <div class="secondary-features reveal">
-        <div class="secondary-feature">
-          <h3>Chroma Key &amp; Blur</h3>
-          <p>Greenscreen and background blur, no extra software.</p>
-        </div>
-        <div class="secondary-feature">
-          <h3>Face Lighting</h3>
-          <p>Your screen as a fill light with adjustable warmth.</p>
-        </div>
-        <div class="secondary-feature">
-          <h3>Per-Axis Tuning</h3>
-          <p>Each axis 0.1x&#8211;5.0x. Dial in your sensitivity.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Downloads -->
-  <section class="downloads" id="downloads">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="sec-index">03</span>
-        <span class="sec-label">Downloads</span>
-        <span class="sec-line"></span>
-      </div>
-      <h2 class="sec-display reveal">Get the <em>kit.</em></h2>
-      <div class="download-grid">
-
-        <div class="download-card download-card--hero panel reveal">
-          <div class="download-card-top">
-            <img src="assets/images/app-icon.png" alt="Headcam" class="download-app-icon" width="48" height="48">
-            <h3>Headcam for iOS</h3>
-          </div>
-          <p class="download-card-desc">The app. Head tracking, camera, audio: everything runs here. Out now on the App Store.</p>
-          <div class="download-card-bottom">
-            <a href="https://apps.apple.com/us/app/headcam/id6759300260" class="btn btn-primary">Download on the App Store</a>
-            <span class="download-req">iPhone with Face ID &middot; iOS 18 or later</span>
+        <div class="mini">
+          <div class="badge">QF</div>
+          <h3>QuickFeed OBS plugin</h3>
+          <p class="ver">v1.2.3</p>
+          <p class="desc">Puts your phone's camera into OBS as a source, fast.</p>
+          <div class="go" data-quickfeed-version="1.2.3">
+            <a href="downloads/obs-plugin/quickfeed-windows.zip">Windows</a>
+            <a href="downloads/obs-plugin/quickfeed-macos.zip">macOS</a>
+            <a href="downloads/obs-plugin/quickfeed-linux.zip">Linux</a>
           </div>
         </div>
 
-        <div class="download-card download-card--hero panel reveal">
-          <div class="download-card-top">
-            <img src="assets/images/app-icon.png" alt="Headcam" class="download-app-icon" width="48" height="48">
-            <h3>Headcam for Android <span class="badge">Closed beta</span></h3>
+        <div class="mini">
+          <div class="badge">USB</div>
+          <h3>USB companion</h3>
+          <p class="ver">v1.0.7</p><!-- usb-version -->
+          <p class="desc">Optional, iPhone only. Plug in over USB to keep the phone charged and get a steadier connection than a busy WiFi network gives you.</p>
+          <div class="go" data-headcam-usb-version="1.0.7">
+            <a href="downloads/headcam-usb/headcam-usb-windows.zip">Windows</a>
           </div>
-          <p class="download-card-desc">The same app for Android, running our own head tracking neural net, in closed testing before its Play Store launch. Join the testers group with your Google account to get immediate access.</p>
-          <div class="download-card-bottom">
-            <a href="https://groups.google.com/g/headcam-testers" class="btn btn-primary">Join the Testers Group</a>
-            <span class="download-req">Closed testing via Google Play</span>
-          </div>
-        </div>
-
-        <div class="download-card panel reveal">
-          <div class="download-card-top">
-            <div class="download-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>
-            </div>
-            <h3>QuickFeed OBS Plugin</h3>
-          </div>
-          <p class="download-card-desc">Ultra low latency video transport for OBS Studio.</p>
-          <div class="download-card-bottom">
-            <div class="download-platforms" data-quickfeed-version="1.2.3">
-              <a href="downloads/obs-plugin/quickfeed-windows.zip" class="platform-btn">Windows</a>
-              <a href="downloads/obs-plugin/quickfeed-macos.zip" class="platform-btn">macOS</a>
-              <a href="downloads/obs-plugin/quickfeed-linux.zip" class="platform-btn">Linux</a>
-            </div>
-            <p class="download-ver">v1.2.3</p>
-          </div>
-        </div>
-
-        <div class="download-card panel reveal">
-          <div class="download-card-top">
-            <div class="download-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="12" rx="1"/><path d="M10 6v4"/><path d="M14 6v4"/><path d="M12 14v4"/><path d="M8 18h8"/><path d="M10 18v2"/><path d="M14 18v2"/></svg>
-            </div>
-            <h3>USB Companion</h3>
-          </div>
-          <p class="download-card-desc">Optional. Wired iPhone connection via USB, no WiFi needed.</p>
-          <div class="download-card-bottom">
-            <div class="download-platforms" data-headcam-usb-version="1.0.7">
-              <a href="downloads/headcam-usb/headcam-usb-windows.zip" class="platform-btn">Windows</a>
-            </div>
-            <details class="download-note">
-              <summary>macOS: download via Terminal</summary>
+          <details>
+            <summary>macOS: via Terminal</summary>
 <pre><code>curl -L https://headcam.app/downloads/headcam-usb/headcam-usb-macos.zip -o headcam-usb.zip
 unzip headcam-usb.zip
 chmod +x headcam-usb/headcam-usb
 ./headcam-usb/headcam-usb</code></pre>
-            </details>
-            <details class="download-note">
-              <summary>Linux: download via Terminal</summary>
+          </details>
+          <details>
+            <summary>Linux: via Terminal</summary>
 <pre><code>curl -L https://headcam.app/downloads/headcam-usb/headcam-usb-linux.zip -o headcam-usb.zip
 unzip headcam-usb.zip
 chmod +x headcam-usb/headcam-usb
 ./headcam-usb/headcam-usb</code></pre>
-            </details>
-            <p class="download-ver">v1.0.7</p><!-- usb-version -->
-          </div>
+          </details>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Setup -->
-  <section class="setup" id="setup">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="sec-index">04</span>
-        <span class="sec-label">Get started</span>
-        <span class="sec-line"></span>
+  <section class="sec" id="setup">
+    <div class="wrap">
+      <h2>Getting set up</h2>
+      <p class="sub">Three steps, no tools. One more if you stream.</p>
+      <div class="steps-grid">
+        <div class="stp"><b>1</b><div><h3>Mount the phone</h3><p>Clip it to the monitor or prop it on the desk, front camera facing you.</p></div></div>
+        <div class="stp"><b>2</b><div><h3>Connect</h3><p>Same WiFi as your PC. On iPhone you can plug in over USB with the companion app instead.</p></div></div>
+        <div class="stp"><b>3</b><div><h3>Play</h3><p>Start your game and look around. That's it. Games with head tracking built in take it from OpenTrack, a free app on your PC. <a href="https://lopari.app" target="_blank" rel="noopener noreferrer">Lopari</a> can launch any of your games with tracking on, if you would like the shortcut.</p></div></div>
       </div>
-      <h2 class="sec-display reveal">Pre<em>flight.</em></h2>
+      <div class="stp opt"><b>4</b><div><h3>Stream, if you want it</h3><p>Install the QuickFeed plugin and your phone shows up in OBS as a camera. Green screen effect, background blur and face lighting come with the optional Pro upgrade.</p></div></div>
+    </div>
+  </section>
 
-      <div class="signal-path reveal" aria-hidden="true">
-        <span class="sp-node">Phone</span>
-        <span class="sp-wire"><i class="sp-wire-label">QuickFeed &middot; UDP :4242</i></span>
-        <span class="sp-node sp-node--accent">OBS + Game</span>
-      </div>
-
-      <div class="setup-steps">
-        <div class="setup-step reveal">
-          <span class="setup-num">01</span>
-          <div class="setup-content">
-            <h3>Mount your phone</h3>
-            <p>Clip it to your monitor or prop it on your desk, front camera facing you.</p>
-          </div>
+  <section class="close">
+    <div class="wrap">
+      <div class="pcard">
+        <span class="rule" aria-hidden="true"></span>
+        <h2>You already own the hardware.</h2>
+        <div class="btns">
+          <a class="btn" href="https://apps.apple.com/us/app/headcam/id6759300260">Get it on iOS</a>
+          <a class="btn alt" href="https://groups.google.com/g/headcam-testers">Android beta</a>
         </div>
-        <div class="setup-step reveal">
-          <span class="setup-num">02</span>
-          <div class="setup-content">
-            <h3>Connect</h3>
-            <p>Same WiFi network, or plug in via USB with the companion app for a wired connection.</p>
-          </div>
-        </div>
-        <div class="setup-step reveal">
-          <span class="setup-num">03</span>
-          <div class="setup-content">
-            <h3>Go</h3>
-            <p>Install the OBS plugin, and your video feed appears as a source. The head tracking mods pick up your tracking data directly; games with native tracking support get it through OpenTrack. No native support? <a href="https://github.com/itsloopyo" target="_blank" rel="noopener noreferrer">Grab the mod.</a></p>
-          </div>
-        </div>
+        <p class="fine">Free &middot; No ads &middot; No account &middot; Nothing leaves your network</p>
       </div>
     </div>
   </section>
 
-  <!-- Compatibility -->
-  <section class="compat">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="sec-index">05</span>
-        <span class="sec-label">Compatibility</span>
-        <span class="sec-line"></span>
-      </div>
-      <div class="compat-grid">
-        <div class="compat-group reveal">
-          <h3>Works with</h3>
-          <ul>
-            <li>OBS Studio</li>
-            <li>OpenTrack</li>
-            <li>Games with native tracking, via OpenTrack</li>
-            <li>Other protocols via OpenTrack relay</li>
-            <li>30+ games via <a href="https://github.com/itsloopyo" target="_blank" rel="noopener noreferrer">head tracking mods</a> (direct)</li>
-            <li><a href="https://lopari.app" target="_blank" rel="noopener noreferrer">Lopari</a> one-click launcher</li>
-          </ul>
-        </div>
-        <div class="compat-group reveal">
-          <h3>Requirements</h3>
-          <ul>
-            <li>iPhone with Face ID, iOS 18 or later</li>
-            <li>or an Android phone (closed beta)</li>
-            <li>WiFi or USB cable</li>
-          </ul>
-        </div>
-        <div class="compat-group reveal">
-          <h3>Protocols</h3>
-          <ul>
-            <li>QuickFeed</li>
-            <li>OpenTrack UDP <code>:4242</code></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+</main>
 
-  <!-- CTA -->
-  <section class="cta">
-    <div class="container cta-inner reveal">
-      <h2 class="cta-headline">You already own <em>the hardware.</em></h2>
-      <div class="cta-actions">
-        <a href="https://apps.apple.com/us/app/headcam/id6759300260" class="btn btn-primary btn-lg">Download for iOS</a>
-        <a href="https://groups.google.com/g/headcam-testers" class="btn btn-ghost btn-lg">Join Android Beta</a>
-      </div>
-      <p class="cta-meta">Free &middot; No ads &middot; No account &middot; Nothing leaves your network</p>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-row">
+      <b>Headcam</b>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="https://github.com/itsloopyo" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://discord.com/invite/dxyZdyFNT9" target="_blank" rel="noopener noreferrer">Discord</a>
+      <a href="https://bsky.app/profile/itsloopyo.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky &middot; @itsloopyo</a>
+      <a href="https://lopari.app" target="_blank" rel="noopener noreferrer">Lopari</a>
     </div>
-  </section>
+    <p class="legal">Game titles belong to their respective owners. Headcam and the head tracking mods are independent projects, not affiliated with or endorsed by any game developer or publisher.</p>
+  </div>
+</footer>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="assets/images/app-icon.png" alt="" class="footer-icon" width="24" height="24">
-        <span>Headcam</span>
-      </div>
-      <div class="footer-links">
-        <a href="privacy.html" class="footer-link">Privacy</a>
-        <a href="terms.html" class="footer-link">Terms</a>
-        <a href="https://github.com/itsloopyo" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
-        <a href="https://discord.com/invite/dxyZdyFNT9" target="_blank" rel="noopener noreferrer" class="footer-link">Discord</a>
-        <a href="https://bsky.app/profile/itsloopyo.bsky.social" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Bluesky">@itsloopyo</a>
-      </div>
-    </div>
-    <div class="container">
-      <p class="footer-note">Game titles belong to their respective owners. Headcam and the head tracking mods are independent projects, not affiliated with or endorsed by any game developer or publisher.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js?v=2"></script>
+<script src="js/main.js?v=3"></script>
 </body>
 </html>
