@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Headcam - iPhone &amp; Android head tracking for games and streaming</title>
-  <meta name="description" content="Move your head, the game follows. Headcam turns your iPhone or Android into a head tracker for games, with fast streaming to OBS on the side. Free on the App Store, Android in closed testing.">
+  <meta name="description" content="Turn your iPhone or Android into a head tracker for games and a camera for OBS. Free to install on the App Store and Google Play. Nothing to wear.">
   <meta name="theme-color" content="#1f4d3a">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Headcam">
   <meta property="og:url" content="https://headcam.app/">
   <meta property="og:title" content="Headcam - iPhone &amp; Android head tracking for games and streaming">
-  <meta property="og:description" content="Move your head, the game follows. Headcam turns your iPhone or Android into a head tracker for games, with fast streaming to OBS on the side. Free on the App Store, Android in closed testing.">
+  <meta property="og:description" content="Turn your iPhone or Android into a head tracker for games and a camera for OBS. Free to install on the App Store and Google Play. Nothing to wear.">
   <meta property="og:image" content="https://headcam.app/assets/images/app-icon.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Headcam - iPhone &amp; Android head tracking for games and streaming">
-  <meta name="twitter:description" content="Move your head, the game follows. Headcam turns your iPhone or Android into a head tracker for games, with fast streaming to OBS on the side. Free on the App Store, Android in closed testing.">
+  <meta name="twitter:description" content="Turn your iPhone or Android into a head tracker for games and a camera for OBS. Free to install on the App Store and Google Play. Nothing to wear.">
   <meta name="twitter:image" content="https://headcam.app/assets/images/app-icon.png">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
   <link rel="preload" href="fonts/baloo2-latin-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=4">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -32,7 +32,10 @@
     "applicationCategory": "UtilitiesApplication",
     "description": "Headcam turns your phone into a head tracker for games, with fast streaming to OBS.",
     "url": "https://headcam.app/",
-    "installUrl": "https://apps.apple.com/us/app/headcam/id6759300260",
+    "installUrl": [
+      "https://apps.apple.com/us/app/headcam/id6759300260",
+      "https://play.google.com/store/apps/details?id=app.headcam.android"
+    ],
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
   </script>
@@ -55,17 +58,24 @@
 <main id="main">
 
   <section class="hero">
+    <div class="wrap">
+      <a class="release-note" href="https://play.google.com/store/apps/details?id=app.headcam.android">
+        <span class="release-label">Just launched</span>
+        <span>Headcam for Android is here.</span>
+        <span class="release-link">Get it on Google Play <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </div>
     <div class="wrap hero-grid">
       <div class="pcard main">
         <span class="rule" aria-hidden="true"></span>
         <div class="pin"><img src="assets/images/app-icon.png" alt="Headcam app icon" width="150" height="150"></div>
         <h1>Move your head. The game follows.</h1>
-        <p class="lead">Your phone watches your face and the game does exactly what your head does. Lean to see round a corner, glance at a mirror, peek over the dash. Nothing to buy, nothing to wear.</p>
+        <p class="lead">Lean round a corner. Glance at a mirror. Peek over the dash. Your phone tracks your head and moves the game camera with you. Nothing to buy, nothing to wear.</p>
         <div class="btns">
-          <a class="btn" href="https://apps.apple.com/us/app/headcam/id6759300260">Get it on iOS</a>
-          <a class="btn alt" href="https://groups.google.com/g/headcam-testers">Android beta</a>
+          <a class="btn store" href="https://apps.apple.com/us/app/headcam/id6759300260"><span>For iPhone</span>App Store</a>
+          <a class="btn alt store" href="https://play.google.com/store/apps/details?id=app.headcam.android"><span>For Android</span>Google Play</a>
         </div>
-        <p class="fine">Free on the App Store &middot; Android in closed testing</p>
+        <p class="fine">Free to install &middot; iPhone &amp; Android</p>
         <div class="specs">
           <div><b>6</b><span>ways to move</span></div>
           <div><b>120</b><span>updates a second</span></div>
@@ -76,12 +86,15 @@
       <div>
         <figure class="pcard wild">
           <span class="rule" aria-hidden="true"></span>
-          <video class="demo" src="img/hero-compare.mp4" poster="img/hero-compare-poster.jpg" width="1280" height="720" autoplay muted loop playsinline preload="metadata"></video>
+          <video class="demo" aria-label="iPhone and Android head tracking comparison" src="img/hero-compare.mp4" poster="img/hero-compare-poster.jpg" width="1280" height="720" autoplay muted loop playsinline controls preload="metadata"></video>
           <figcaption>iPhone and Android tracking, side by side.</figcaption>
         </figure>
         <div class="wild-copy">
+          <p class="eyebrow">Head tracking + OBS camera</p>
           <h2>Your phone is the tracker.</h2>
-          <p>The front camera watches your face and Headcam turns that into head tracking for DCS, iRacing, MSFS, the hundreds of games OpenTrack supports, and dozens more through free mods. It even streams to OBS on the side, if you want it.</p>
+          <p>Use Headcam with DCS, iRacing, MSFS and the hundreds of games OpenTrack supports, plus dozens more through free mods.</p>
+          <p>Streaming too? Send your phone's video and audio straight to OBS with the QuickFeed plugin.</p>
+          <a class="text-link" href="#setup">See how to get connected <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -94,7 +107,7 @@
         <div class="back-grid">
           <div class="bl">
             <i aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="#f3e9d2" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><path d="M7 2v10M2 7h10"/></svg></i>
-            <div><h3>Turn, tilt and lean, all six</h3><p>Your head moves six ways and the game gets all of them. On iPhone that comes from the <b>Face ID camera</b>; on Android from a <b>tracking model we built ourselves</b>. Smoothed on the phone and sent at <b>120 updates a second</b>.</p></div>
+            <div><h3>Turn, tilt and lean</h3><p>All six degrees of movement, from the <b>Face ID camera</b> on iPhone or <b>our own tracking model</b> on Android. Smoothed on the phone and sent at <b>120 updates a second</b>.</p></div>
           </div>
           <div class="bl">
             <i aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="#f3e9d2" stroke-width="1.6"><rect x="2" y="4" width="7" height="6" rx="1"/><path d="M9 6l3-2v6l-3-2"/></svg></i>
@@ -102,11 +115,11 @@
           </div>
           <div class="bl">
             <i aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="#f3e9d2" stroke-width="1.6"><path d="M2 10l3-4 2 3 2-2 3 3"/></svg></i>
-            <div><h3>Is it as fast as a real tracker?</h3><p>Close. In our own testing both versions came in <b>about 30ms behind a dedicated tracker</b>. On Android, where trackers vary a lot, ours left the competition in the dust.</p></div>
+            <div><h3>How fast is it?</h3><p>In our own testing, both iPhone and Android came in <b>about 30ms behind a dedicated tracker</b>.</p></div>
           </div>
           <div class="bl">
             <i aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="#f3e9d2" stroke-width="1.6"><path d="M2 4h10M2 7h10M2 10h10"/><circle cx="5" cy="4" r="1.3" fill="#f3e9d2"/><circle cx="9" cy="7" r="1.3" fill="#f3e9d2"/><circle cx="6" cy="10" r="1.3" fill="#f3e9d2"/></svg></i>
-            <div><h3>Won't I be looking away from the screen?</h3><p>Not for the movements that matter. Headcam maps your head to the camera <b>1:1</b> by default, so it is the small moves you make anyway, a lean, a glance, a peek, and the game does the same. Want more? Turn up the sensitivity on any axis, or route it through OpenTrack for curves.</p></div>
+            <div><h3>Make the movement your own</h3><p>Headcam maps your head to the camera <b>1:1 by default</b> for small leans, glances and peeks. Turn up the sensitivity on any axis for a bigger movement in game, or use OpenTrack for custom curves.</p></div>
           </div>
           <div class="bl">
             <i aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="#f3e9d2" stroke-width="1.6"><path d="M7 2l5 3v4l-5 3-5-3V5z"/></svg></i>
@@ -123,25 +136,30 @@
 
   <section class="sec" id="set">
     <div class="wrap">
-      <h2>Downloads</h2>
-      <p class="sub">The app, and two small extras if you want them.</p>
+      <h2>Pick your phone. Start here.</h2>
+      <p class="sub">Free to install on iPhone and Android.</p>
       <div class="set-grid">
 
         <div class="mini coral">
-          <div class="badge"><img src="assets/images/app-icon.png" alt="" width="64" height="64"></div>
+          <div class="badge"><img src="assets/images/app-icon.png" alt="" width="64" height="64" loading="lazy"></div>
           <h3>Headcam for iOS</h3>
           <span class="ver">Out now</span>
-          <p class="desc">The app. iPhone with Face ID, iOS 18 or later.</p>
+          <p class="desc">Head tracking and a camera for OBS. Requires an iPhone with Face ID and iOS 18 or later.</p>
           <div class="go"><a href="https://apps.apple.com/us/app/headcam/id6759300260">App Store</a></div>
         </div>
 
         <div class="mini coral">
-          <div class="badge"><img src="assets/images/app-icon.png" alt="" width="64" height="64"></div>
+          <div class="badge"><img src="assets/images/app-icon.png" alt="" width="64" height="64" loading="lazy"></div>
           <h3>Headcam for Android</h3>
-          <span class="ver">Closed beta</span>
-          <p class="desc">The same app for Android, in closed testing before it reaches the Play Store. Join the testers group with your Google account.</p>
-          <div class="go"><a href="https://groups.google.com/g/headcam-testers">Testers group</a></div>
+          <span class="ver">Out now</span>
+          <p class="desc">Head tracking and a camera for OBS, using your phone's front camera. Now available on Google Play.</p>
+          <div class="go"><a href="https://play.google.com/store/apps/details?id=app.headcam.android">Google Play</a></div>
         </div>
+
+      </div>
+      <h3 class="extras-heading">For your computer</h3>
+      <p class="sub">Add a camera to OBS, or connect your iPhone over USB.</p>
+      <div class="set-grid extras">
 
         <div class="mini">
           <div class="badge">QF</div>
@@ -186,11 +204,11 @@ chmod +x headcam-usb/headcam-usb
   <section class="sec" id="setup">
     <div class="wrap">
       <h2>Getting set up</h2>
-      <p class="sub">Three steps, no tools. One more if you stream.</p>
+      <p class="sub">Phone, connection, game. Add OBS whenever you're ready.</p>
       <div class="steps-grid">
         <div class="stp"><b>1</b><div><h3>Mount the phone</h3><p>Clip it to the monitor or prop it on the desk, front camera facing you.</p></div></div>
         <div class="stp"><b>2</b><div><h3>Connect</h3><p>Same WiFi as your PC. On iPhone you can plug in over USB with the companion app instead.</p></div></div>
-        <div class="stp"><b>3</b><div><h3>Play</h3><p>Start your game and look around. That's it. Games with head tracking built in take it from OpenTrack, a free app on your PC. <a href="https://lopari.app" target="_blank" rel="noopener noreferrer">Lopari</a> can launch any of your games with tracking on, if you would like the shortcut.</p></div></div>
+        <div class="stp"><b>3</b><div><h3>Connect your game</h3><p>For games with built-in head tracking, use OpenTrack on your PC to receive Headcam's tracking data. You can also use <a href="https://lopari.app" target="_blank" rel="noopener noreferrer">Lopari</a> to launch supported games with tracking on.</p></div></div>
       </div>
       <div class="stp opt"><b>4</b><div><h3>Stream, if you want it</h3><p>Install the QuickFeed plugin and your phone shows up in OBS as a camera. Green screen effect, background blur and face lighting come with the optional Pro upgrade.</p></div></div>
     </div>
@@ -202,8 +220,8 @@ chmod +x headcam-usb/headcam-usb
         <span class="rule" aria-hidden="true"></span>
         <h2>You already own the hardware.</h2>
         <div class="btns">
-          <a class="btn" href="https://apps.apple.com/us/app/headcam/id6759300260">Get it on iOS</a>
-          <a class="btn alt" href="https://groups.google.com/g/headcam-testers">Android beta</a>
+          <a class="btn store" href="https://apps.apple.com/us/app/headcam/id6759300260"><span>For iPhone</span>App Store</a>
+          <a class="btn alt store" href="https://play.google.com/store/apps/details?id=app.headcam.android"><span>For Android</span>Google Play</a>
         </div>
         <p class="fine">Free &middot; No ads &middot; No account &middot; Nothing leaves your network</p>
       </div>
